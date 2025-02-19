@@ -18,6 +18,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-security' // 스프링 시큐리티를 사용하기 위한 스타터 추가
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' // OAuth2를 사용하기 위한 스타터 추가
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6' // 타임리프에서 스프링 시큐리티를 사용하기 위한 의존성 추가
     implementation 'io.jsonwebtoken:jjwt:0.9.1' // 자바 JWT 라이브러리
     implementation 'javax.xml.bind:jaxb-api:2.3.1' // XML 문서와 Java 객체 간 매핑 자동화
@@ -25,6 +26,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test' // 스프링 시큐리티를 테스트하기 위한 의존성 추가
     testImplementation 'org.projectlombok:lombok'
+    testImplementation 'net.datafaker:datafaker:2.0.2'
     runtimeOnly 'com.h2database:h2' // 인메모리 데이터베이스
     compileOnly 'org.projectlombok:lombok' // 롬복
     annotationProcessor 'org.projectlombok:lombok'
@@ -35,6 +37,6 @@ jar {
     enabled = false
 }
 
-//test {
-//    useJUnitPlatform()
-//}
+test {
+    useJUnitPlatform()
+}
