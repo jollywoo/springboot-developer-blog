@@ -10,6 +10,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @EntityListeners(AuditingEntityListener.class)
 @Entity // 엔티티로 지정
@@ -38,6 +39,9 @@ public class Article {
 
     @Column(name = "author", nullable = false)
     private String author;
+
+    @OneToMany(mappedBy = "article", cascade = CascadeType.REMOVE)
+    private List<Comment> comments;
 
     @Builder // 빌더 패턴으로 객체 생성
     public Article(String author, String title, String content) {
