@@ -2,6 +2,7 @@ package me.woojeeyoung.springbootdeveloper.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import me.woojeeyoung.springbootdeveloper.config.error.exception.ArticleNotFoundException;
 import me.woojeeyoung.springbootdeveloper.domain.Article;
 import me.woojeeyoung.springbootdeveloper.dto.AddArticleRequest;
 import me.woojeeyoung.springbootdeveloper.dto.UpdateArticleRequest;
@@ -28,7 +29,7 @@ public class BlogService {
 
     public Article findById(long id) {
         return blogRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+                .orElseThrow(ArticleNotFoundException::new);
     }
 
     public void delete(long id) {

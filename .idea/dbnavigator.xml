@@ -54,9 +54,7 @@ show tables;]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="4e402baa-4d8e-4464-9b37-de1267a183f0" object-ref="consoles/Connection" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="4e402baa-4d8e-4464-9b37-de1267a183f0" />
